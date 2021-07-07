@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2021-07-06T13:06:40.336-04:00
-  initializedAtString: 2021-07-06T12:49:10.050-04:00
+  lastUpdatedAtString: 2021-07-07T18:06:58.424-04:00
+  initializedAtString: 2021-07-07T17:06:42.354-04:00
   currentGitRemote:
     name: origin
     url: https://github.com/xRaziel/JuegoSoftware.git

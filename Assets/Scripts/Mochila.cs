@@ -8,6 +8,8 @@ public class Mochila : MonoBehaviour
     public List<GameObject> Bag = new List<GameObject>();
     public GameObject inv;
     public bool activarInv;
+
+    public GameObject text;
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.CompareTag("Item") || coll.CompareTag("Cell"))
@@ -25,8 +27,13 @@ public class Mochila : MonoBehaviour
 
                 }
             }
+        
         }
+
+        
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -43,5 +50,19 @@ public class Mochila : MonoBehaviour
         {
             activarInv = !activarInv;
         }
+
+        
+        if (Bag.Count > 0){
+            text.SetActive(true);
+        }
+        else{
+            text.SetActive(false);
+        }
+        
     }
+
+
+
+
+
 }

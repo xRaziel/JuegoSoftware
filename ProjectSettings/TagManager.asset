@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Item
   - Cell
+  - jugador
+  - abuelo
+  - texto
   layers:
   - Default
   - TransparentFX
