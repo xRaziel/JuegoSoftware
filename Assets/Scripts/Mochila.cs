@@ -8,6 +8,7 @@ public class Mochila : MonoBehaviour
     public List<GameObject> Bag = new List<GameObject>();
     public GameObject inv;
     public bool activarInv;
+    public GameObject listaContactos;
 
     public GameObject text;
     private void OnTriggerEnter2D(Collider2D coll)
@@ -19,7 +20,6 @@ public class Mochila : MonoBehaviour
             {
                 if (Bag[i].GetComponent<Image>().enabled == false)
                 {
-                    Debug.Log("Esta pasando");
                     Bag[i].GetComponent<Image>().enabled = true;
                     Bag[i].GetComponent<Image>().sprite = coll.GetComponent<SpriteRenderer>().sprite;
                     coll.gameObject.SetActive(false);
@@ -31,6 +31,11 @@ public class Mochila : MonoBehaviour
         }
 
         
+    }
+
+    public List<GameObject> getBag()
+    {
+        return Bag;
     }
 
 
@@ -59,6 +64,30 @@ public class Mochila : MonoBehaviour
             text.SetActive(false);
         }
         
+    }
+
+    public void listaContactosPanel()
+    {
+        bool celularInMochila = false;
+        for(int i = 0; i < Bag.Count; i++)
+        {
+            if(Bag[i].GetComponent<Image>().CompareTag("Cell"))
+            {
+                celularInMochila = true;
+                break;
+            }
+        }
+        if (celularInMochila)
+        {
+            Time.timeScale = 0;
+            listaContactos.SetActive(true);
+        }
+
+    }
+    public void Return()
+    {
+        Time.timeScale = 1;
+        listaContactos.SetActive(false);
     }
 
 
